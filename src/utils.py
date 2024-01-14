@@ -53,4 +53,11 @@ def evaluate_models(models:dict, params:dict, X_train, X_test, y_train, y_test):
     
 
 
+def load_obj(file_path):
+    try :
+        with open(file_path, "rb") as file:
+            return pickle.load(file)
+    except Exception as error:
+        raise CustomException(error, sys)
+    
 
