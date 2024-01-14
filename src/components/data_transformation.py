@@ -23,9 +23,8 @@ class DataTransformation:
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
 
-    def get_data_transformer_object(self):
+    def get_data_transformer_object(self) -> ColumnTransformer :
         #creating all my pickle files responsible for transformation
-
         '''
         This function is responsible for data transformation
         '''
@@ -70,8 +69,6 @@ class DataTransformation:
             preprocessor_obj = self.get_data_transformer_object()
 
             target_col = "math_score"
-            numerical_cols = ["reading_score", "writing_score"]
-
 
             input_feature_train = train_df.drop(target_col, axis=1)
             target_feature_train = train_df[target_col]
